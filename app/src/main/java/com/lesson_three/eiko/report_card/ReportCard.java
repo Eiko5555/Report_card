@@ -1,29 +1,34 @@
 package com.lesson_three.eiko.report_card;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+public class ReportCard {
 
-public class MainActivity extends AppCompatActivity {
+    public static void main(String[] args){
+        ReportCard math = new ReportCard( "math", 79);
+        System.out.println(math.toString());
+    }
 
     private String className;
-    private String grade;
+    private int grade;
 
-    public void createreportCard(String className, String grade){
+    public ReportCard(String className, int grade){
         this.className = className;
         this.grade = grade;
     }
     public void setClassName(String className){
         this.className = className;
     }
+
     public String getClassName(){
         return className;
     }
-    public void setGrade(String grade){
+
+    public void setGrade(int grade){
         this.grade = grade;
     }
+
     public String getGrade(int score){
         String grade;
-        
+
         if (score<101 && score >89 )
             grade = "A";
         else if (score<90 && score>79)
@@ -40,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         return grade;
     }
 
-    public String reportMessage(){
+    public String toString(){
         return "Report card " +
                 "\n Class Name : "+ className
                 + "\n Grade : " + grade;
